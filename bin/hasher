@@ -1,0 +1,11 @@
+#! /usr/bin/env python
+import hashlib
+import sys
+def hashing(argv: str):
+    hashed_sha256 = hashlib.sha256(argv.encode('utf-8'))
+    hashed_md5 = hashlib.md5(argv.encode('utf-8'))
+    print('sha256:', hashed_sha256.hexdigest())
+    print('md5:', hashed_md5.hexdigest())
+
+if __name__ == "__main__":
+    hashing(sys.argv[1])
