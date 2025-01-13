@@ -4,9 +4,10 @@ import sys
 import os
 
 def update() -> None:
-    os.system("git pull")
+    os.system("git pull origin main")
+    print('update')
 
-def main(*args) -> None:
+def main(args) -> None:
     if "--help" in args or "-H" in args or len(args) == 1:
         print("""cscriptz [-flag/--flag] [keywords]
         flags:
@@ -17,5 +18,5 @@ def main(*args) -> None:
         update()
 
 if __name__ == "__main__":
-    args = sys.argv if not IndexError else None 
+    args = sys.argv
     main(args)
